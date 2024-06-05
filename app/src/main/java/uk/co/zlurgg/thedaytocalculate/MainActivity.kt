@@ -12,17 +12,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import uk.co.zlurgg.thedaytocalculate.presentation.CalculatorScreen
+import uk.co.zlurgg.thedaytocalculate.presentation.CalculatorViewModel
 import uk.co.zlurgg.thedaytocalculate.ui.theme.TheDayToCalculateTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContent {
             TheDayToCalculateTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CalculatorScreen(modifier = Modifier.padding(innerPadding))
-                }
+                CalculatorScreen()
             }
         }
     }

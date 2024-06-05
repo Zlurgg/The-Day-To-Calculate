@@ -22,20 +22,21 @@ import uk.co.zlurgg.thedaytocalculate.ui.theme.TheDayToCalculateTheme
 fun CalculatorButton(
     modifier: Modifier = Modifier,
     symbol: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    color: Color
 ) {
     Button(
         modifier = modifier
-            .size(80.dp)
-            .padding(8.dp),
+            .size(90.dp)
+            .padding(4.dp),
         shape = RoundedCornerShape(8.dp),
         contentPadding = PaddingValues(0.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color.DarkGray,
+            containerColor = color,
             contentColor = Color.White,
         ),
         onClick = {
-            /* update state */
+            onClick()
         }) {
         Box(
             contentAlignment = Alignment.Center
@@ -56,7 +57,8 @@ fun CalculatorButtonPreview() {
     TheDayToCalculateTheme {
         CalculatorButton(
             symbol = "1",
-            onClick = {}
+            onClick = {},
+            color = Color.DarkGray
         )
     }
 }
